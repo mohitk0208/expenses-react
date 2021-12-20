@@ -1,10 +1,18 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import Home from './pages/Home';
+import Login from './pages/Login';
+import { routes } from './utils/routeStrings';
 
 function App() {
   return (
-    <div className=" bg-red-400 text-gray-600">
-      This is react
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path={routes.HOME} element={<Home />} />
+        <Route path={routes.LOGIN} element={<Login />} />
+        <Route path="*" element={<Navigate to={routes.LOGIN} />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
