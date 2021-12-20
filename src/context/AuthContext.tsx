@@ -16,7 +16,7 @@ interface AuthProviderProps {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export function useAuthContext() {
+export function useAuth() {
   return useContext(AuthContext)
 }
 
