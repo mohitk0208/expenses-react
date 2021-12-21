@@ -1,18 +1,14 @@
-import { useAuth } from "../context/AuthContext"
+import ContentContainer from "../components/ContentContainer"
+import Dashboard from "../components/Dashboard"
 
 function Home() {
-  const authContext = useAuth()
 
   return (
-    <div>
-      This is home.
-      <button
-        className="border border-red-500 text-red-500 p-2 rounded-sm m-1 hover:bg-red-400 hover:text-white transition-colors duration-200 ease-in-out"
-        type="button"
-        onClick={() => authContext?.logout()}
-      >
-        Logout
-      </button>
+    <div className="flex flex-col min-h-screen">
+      <Dashboard />
+      <ContentContainer>
+        This is Content area to contain categories and expenses
+      </ContentContainer>
     </div>
   )
 }
