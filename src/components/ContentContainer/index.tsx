@@ -1,17 +1,18 @@
 import React from "react"
 interface ContentContainerPropTypes {
-  children?: React.ReactChild | React.ReactChildren
+  children?: React.ReactNode
 }
 
 
 function ContentContainer({ children }: ContentContainerPropTypes) {
 
-  return <div className="w-screen flex-[4]" >
-    <div>
-      {children}
+  return (
+    <div className="w-screen flex-[2]" >
+      <div>
+        {children}
+      </div>
     </div>
-  </div>
-
+  )
 }
 
 export default ContentContainer

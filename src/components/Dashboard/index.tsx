@@ -20,7 +20,7 @@ function Dashboard() {
    */
 
   return (
-    <div className="flex-1 w-screen relative flex flex-col" >
+    <div className="flex-1 w-screen relative flex flex-col mb-5 bg-gray-300 pb-5" >
       <nav className="flex items-center justify-between bg-gray-200 py-1 px-5 shadow-sm">
         <div>
           <h1 className="font-bold" >
@@ -39,7 +39,7 @@ function Dashboard() {
           </button>
         </div>
       </nav>
-      <div className="flex flex-1 items-center justify-around h-full lg:w-11/12  mx-auto bg-blue-300" >
+      <div className="flex flex-1 items-center justify-around h-full lg:w-11/12  mx-auto bg-blue-300 py-5" >
         <div className=" w-72 bg-gray-500 h-48 " >
 
         </div>

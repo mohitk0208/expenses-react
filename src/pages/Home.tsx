@@ -1,3 +1,4 @@
+import CategoriesContainer from "../components/CategoriesContainer"
 import ContentContainer from "../components/ContentContainer"
 import Dashboard from "../components/Dashboard"
 
@@ -7,7 +8,7 @@ function Home() {
     <div className="flex flex-col min-h-screen">
       <Dashboard />
       <ContentContainer>
-        This is Content area to contain categories and expenses
+        <CategoriesContainer />
       </ContentContainer>
     </div>
   )
