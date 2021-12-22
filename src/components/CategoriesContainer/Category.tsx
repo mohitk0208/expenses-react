@@ -1,4 +1,4 @@
-import { category } from "./category.types"
+import { category } from "../../types/category.types"
 
 interface CategoryProp {
   category: category
