@@ -6,7 +6,7 @@ interface ContentContainerPropTypes {
 
 function ContentContainer({ children }: ContentContainerPropTypes) {
 
-  return <div className="w-screen flex-[2] bg-blue-200" >
+  return <div className="w-screen flex-[4]" >
     <div>
       {children}
     </div>
