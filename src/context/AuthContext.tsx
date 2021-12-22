@@ -1,4 +1,4 @@
-import React, { createContext, ReactChild, ReactChildren, useContext, useEffect, useState } from "react"
+import React, { createContext, useContext, useEffect, useState } from "react"
 import firebaseAuthTypes from "@firebase/auth-types"
 import {auth, googleProvider } from "../firebase"
 import { signInWithPopup } from "firebase/auth";
@@ -11,10 +11,14 @@ interface AuthContextType {
 
 
 interface AuthProviderProps {
-  children: ReactChild | ReactChildren
+  children: React.ReactNode
 }
 
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+const AuthContext = createContext<AuthContextType>({
+  currentUser: null,
+  login: () => null,
+  logout: () => null
+});
 
 export function useAuth() {
   return useContext(AuthContext)

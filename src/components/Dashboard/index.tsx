@@ -2,9 +2,7 @@ import { useAuth } from "../../context/AuthContext"
 
 function Dashboard() {
 
-  const authContext = useAuth()
-
-  const currentUser = authContext?.currentUser
+  const { currentUser, logout } = useAuth()
 
   /**
    * Dashboard will have two modes
@@ -31,7 +29,7 @@ function Dashboard() {
       <button
         className="text-red-500 border border-red-500 px-2 py-1 m-1 rounded-md hover:bg-red-500 hover:text-white transition-colors duration-200 ease-in-out"
         type="button"
-        onClick={() => authContext?.logout()}
+        onClick={() => logout()}
       >
         logout
       </button>

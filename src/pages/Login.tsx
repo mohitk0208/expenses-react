@@ -6,13 +6,13 @@ function Login() {
 
   const [error, setError] = useState<string | null>(null)
 
-  const authContext = useAuth()
+  const {login} = useAuth()
 
   async function loginHandler() {
 
     try {
       setError(null)
-      const user = await authContext?.login()
+      const user = await login()
 
       console.log(user);
 
