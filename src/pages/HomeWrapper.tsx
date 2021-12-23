@@ -1,17 +1,20 @@
-import CategoriesContainer from "../components/CategoriesContainer"
 import ContentContainer from "../components/ContentContainer"
 import Dashboard from "../components/Dashboard"
 
-function Home() {
+interface HomeWrapperProps {
+  children: React.ReactNode
+}
+
+function HomeWrapper({ children }: HomeWrapperProps) {
 
   return (
     <div className="flex flex-col min-h-screen">
       <Dashboard />
       <ContentContainer>
-        <CategoriesContainer />
+        {children}
       </ContentContainer>
     </div>
   )
 }
 
-export default Home
+export default HomeWrapper

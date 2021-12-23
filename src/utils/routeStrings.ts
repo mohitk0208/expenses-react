@@ -1,4 +1,5 @@
 export const routes = {
   LOGIN: "/login",
-  HOME: "/"
+  HOME: "/",
+  EXPENSES: (categoryId?: string | number) => `/expenses/${categoryId ? categoryId : ":categoryId"}`
 }
