@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
-import { expense, expenseResponse } from "../../types/expense.types"
+import { expenseResponse } from "../../types/expense.types"
 import { GET_EXPENSES_BY_CATEGORY_ID } from "../../utils/endpoints"
 import Expense from "./Expense"
 
@@ -21,7 +21,7 @@ const ExpensesContainer = () => {
         const resData = await res.json()
 
         if (res.ok) {
-          setExpenses(resData as expenseResponse[] )
+          setExpenses(resData as expenseResponse[])
         }
 
       }
@@ -41,10 +41,24 @@ const ExpensesContainer = () => {
   console.log(expenses)
 
   return (
-    <div>
-      {expenses.map(expense => {
-        return <Expense key={expense.id} expense={expense} />
-      })}
+    <div className="px-[5%] divide-y" >
+      <div className="pb-2">
+        <h1 className="font-bold text-xl text-center" >
+          Expenses
+        </h1>
+      </div>
+      <div className=" max-w-xl min-w-[250px] w-5/6 mx-auto pb-8" >
+        {loading ? (
+          <p>
+            loading ...
+          </p>
+        ) : (
+          expenses.map(expense => {
+            return <Expense key={expense.id} expense={expense} />
+          })
+        )}
+
+      </div>
     </div>
   )
 
