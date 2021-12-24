@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { useAuth } from "../../context/AuthContext"
-import { expense } from "../../types/expense.types"
+import { expense, expenseResponse } from "../../types/expense.types"
 import { GET_EXPENSES_BY_CATEGORY_ID } from "../../utils/endpoints"
 import Expense from "./Expense"
 
 const ExpensesContainer = () => {
-  const [expenses, setExpenses] = useState<expense[]>([])
+  const [expenses, setExpenses] = useState<expenseResponse[]>([])
   const [loading, setLoading] = useState(false)
 
   const { currentUser } = useAuth()
@@ -21,7 +21,7 @@ const ExpensesContainer = () => {
         const resData = await res.json()
 
         if (res.ok) {
-          setExpenses(resData)
+          setExpenses(resData as expenseResponse[] )
         }
 
       }

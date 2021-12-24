@@ -7,3 +7,7 @@ export interface expense {
   spentOn?: string,
   uid: string
 }
+
+export interface expenseResponse extends expense  {
+  categoryKey: string
+}
