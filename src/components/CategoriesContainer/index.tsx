@@ -37,17 +37,26 @@ const CategoriesContainer = () => {
   }, [currentUser])
 
   return (
-    <div className="w-11/12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto py-5" >
-      {loading ? <p>
-        loading...
-      </p> : (
-        categories.map(category => {
+    <div className="px-[5%] divide-y " >
+      <div className="pb-2" >
+        <h1 className="font-bold text-xl text-center" >Categories</h1>
+      </div>
 
-          return <Category key={category.id} category={category} />
 
-        })
-      )}
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mx-auto py-5" >
+        {loading ? <p>
+          loading...
+        </p> : (
+          categories.map(category => {
+
+            return <Category key={category.id} category={category} />
+
+          })
+        )}
+      </div>
     </div>
+
+
   )
 
 }
