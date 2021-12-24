@@ -38,8 +38,6 @@ const ExpensesContainer = () => {
 
   }, [currentUser, categoryId])
 
-  console.log(expenses)
-
   return (
     <div className="px-[5%] divide-y" >
       <div className="pb-2">

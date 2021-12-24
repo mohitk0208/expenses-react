@@ -18,7 +18,6 @@ const CategoriesContainer = () => {
         const resData = await res.json()
 
         if (res.ok) {
-          console.log(resData)
           setCategories(resData?.expenseCategories)
         }
 

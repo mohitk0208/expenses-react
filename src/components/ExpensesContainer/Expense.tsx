@@ -14,7 +14,7 @@ const Expense: React.FC<ExpenseProps> = ({ expense }) => {
           {expense.spentOn}
         </p>
       </div>
-      <div className="w-14 font-bold flex items-center justify-center sm:text-xl " >
+      <div className="w-20 font-bold flex items-center sm:text-xl " >
         &#8377; {`${expense.amount}`}
       </div>
     </div>
