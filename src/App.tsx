@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
 import CategoriesContainer from './components/CategoriesContainer';
+import Navbar from "./components/Dashboard/Navbar";
 import ExpensesContainer from "./components/ExpensesContainer";
 import { AuthProvider, useAuth } from './context/AuthContext';
 import HomeWrapper from './pages/HomeWrapper';
@@ -21,9 +22,12 @@ function App() {
 
           <Route path={routes.EXPENSES()} element={
             <RequireAuth redirectTo={routes.LOGIN}  >
-              <HomeWrapper>
+              {/* <HomeWrapper> */}
+              <>
+                <Navbar />
                 <ExpensesContainer />
-              </HomeWrapper>
+              </>
+              {/* </HomeWrapper> */}
             </RequireAuth>
           } />
 
